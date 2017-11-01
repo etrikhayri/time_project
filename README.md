@@ -25,7 +25,7 @@ The MIT License (MIT)
 
 
 
-What's inside?
+
 ---------------
 
 
