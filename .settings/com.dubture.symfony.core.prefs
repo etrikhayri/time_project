@@ -1,0 +1,5 @@
+com.dubture.symfony.coreconsole=C\:app/console
+com.dubture.symfony.coredumped_container=app/cache/dev/appDevDebugProjectContainer.xml
+com.dubture.symfony.corephp_executable=C\:\\wamp\\bin\\php\\php5.4.16\\php.exe
+com.dubture.symfony.coreuse_project_phar=false
+eclipse.preferences.version=1

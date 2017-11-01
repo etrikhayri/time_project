@@ -1,0 +1,36 @@
+{# src/Blogger/BlogBundle/Resources/views/Page/contact.html.twig #}
+{% extends 'BloggerBlogBundle::layout.html.twig' %}
+
+{% block title %}Contact{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Contact symblog</h1>
+    </header>
+
+{% if app.session.flashbag.has('success') %}
+<div class="row-fluid">
+<div class="span12 alert alert-success">
+{% for flashMessage in app.session.flashbag.get('success') %}
+{{ flashMessage }}
+{% endfor %}
+
+</div>
+</div>
+{% endif %}
+
+    <p>Want to contact symblog?</p>
+
+    <form action="{{ path('BloggerBlogBundle_contact') }}" method="post" {{ form_enctype(form) }} class="blogger">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.nom) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.objet) }}
+        {{ form_row(form.contenu) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="envoyer" />
+    </form>
+{% endblock %}

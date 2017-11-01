@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Admin\AdminBundle\Entity\Eleve" table="eleve">
+    <indexes>
+      <index name="classe" columns="classe"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="identite" type="integer" column="identite" nullable="false"/>
+    <field name="nom" type="string" column="nom" length="255" nullable="false"/>
+    <field name="prenom" type="string" column="prenom" length="255" nullable="false"/>
+    <field name="cin" type="integer" column="cin" nullable="false"/>
+    <field name="nationalite" type="string" column="nationalite" length="255" nullable="false"/>
+    <field name="sexe" type="string" column="sexe" length="255" nullable="false"/>
+    <field name="adresse" type="string" column="adresse" length="255" nullable="false"/>
+    <field name="mail" type="string" column="mail" length="255" nullable="false"/>
+    <field name="tel" type="integer" column="tel" nullable="false"/>
+    <many-to-one field="classe" target-entity="Classe">
+      <join-columns>
+        <join-column name="classe" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Admin\AdminBundle\Entity\Planning" table="planning">
+    <indexes>
+      <index name="salle" columns="salle"/>
+      <index name="classe" columns="classe"/>
+      <index name="professeur" columns="professeur"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="jour" type="string" column="jour" length="255" nullable="false"/>
+    <field name="hEntree" type="time" column="h_entree" nullable="false"/>
+    <field name="hSortie" type="time" column="h_sortie" nullable="false"/>
+    <many-to-one field="salle" target-entity="Salle">
+      <join-columns>
+        <join-column name="salle" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="professeur" target-entity="Professeur">
+      <join-columns>
+        <join-column name="professeur" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="classe" target-entity="Classe">
+      <join-columns>
+        <join-column name="classe" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

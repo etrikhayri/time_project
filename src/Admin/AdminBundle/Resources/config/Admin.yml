@@ -1,0 +1,67 @@
+services:
+    sonata.admin.Eleve:
+        class: Admin\AdminBundle\Admin\EleveAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Eleve" }
+        arguments:
+            - ~
+            - Admin\AdminBundle\Entity\Eleve
+            - ~
+        calls:
+            - [ setTranslationDomain, [AdminAdminBundle]]
+            
+    sonata.admin.Classe:
+        class: Admin\AdminBundle\Admin\ClasseAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Classe" }
+        arguments:
+            - ~
+            - Admin\AdminBundle\Entity\Classe
+            - ~
+        calls:
+            - [ setTranslationDomain, [AdminAdminBundle]]
+            
+    sonata.admin.Matiere:
+        class: Admin\AdminBundle\Admin\MatiereAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Matiere" }
+        arguments:
+            - ~
+            - Admin\AdminBundle\Entity\Matiere
+            - ~
+        calls:
+            - [ setTranslationDomain, [AdminAdminBundle]]
+            
+    sonata.admin.Professeur:
+        class: Admin\AdminBundle\Admin\ProfesseurAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Professeur" }
+        arguments:
+            - ~
+            - Admin\AdminBundle\Entity\Professeur
+            - ~
+        calls:
+            - [ setTranslationDomain, [AdminAdminBundle]]
+            
+    sonata.admin.Salle:
+        class: Admin\AdminBundle\Admin\SalleAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Salle" }
+        arguments:
+            - ~
+            - Admin\AdminBundle\Entity\Salle
+            - ~
+        calls:
+            - [ setTranslationDomain, [AdminAdminBundle]]
+            
+    sonata.admin.Planning:
+        class: Admin\AdminBundle\Admin\PlanningAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Planning" }
+        arguments:
+            - ~
+            - Admin\AdminBundle\Entity\Planning
+            - ~
+        calls:
+            - [ setTranslationDomain, [AdminAdminBundle]]
+                     
